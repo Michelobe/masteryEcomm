@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Button, Card, CardActions, CardContent, CardMedia } from '@material-ui/core';
 import useStyles from './styles';
-import { mergeClasses } from '@material-ui/styles';
+// import { mergeClasses } from '@material-ui/styles';
 
 const CartItem = ({ item }) => {
     const classes = useStyles();
@@ -12,7 +12,14 @@ const CartItem = ({ item }) => {
                 <Typography variant='h4'>{item.name}</Typography>
                 <Typography variant='h3'>{item.price.formatted_with_symbol}</Typography>
             </CardContent>
-            <CardActions></CardActions>
+            <CardActions className={classes.cardActions}>
+                <div className={classes.buttons}>
+                    <Button type='button' size='small'>-</Button>
+                    <Typography>{item.quantity}</Typography>
+                    <Button type='button' size='small'>+</Button>
+                </div>
+                <Button variant='contained' type='button' color='secondary'>Remove</Button>
+            </CardActions>
         </Card>
     );
 };
