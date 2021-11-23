@@ -8,9 +8,9 @@ const App = () => {
     const [cart, setCart] = useState({});
 
     const fetchProducts = async () => {
-        const { data } = await commerce.products.list();
+        const data = await commerce.products.list();
         
-        setProducts(data);
+        setProducts(data.data);
         
     };
 
@@ -31,14 +31,14 @@ const App = () => {
         fetchCart();
     }, []);
 
-    console.log(cart);
+    console.log(products);
 
     return(
         <Router>
             <Navbar totalItems={cart.total_items} />
             <Routes>
-                <Route path='/' element={<Products products={products} onAddToCart={handleAddToCart} />}></Route>
-                <Route path='/cart' element={<Cart cart={cart} />}></Route>
+                <Route path='/' element={<Products products={products} onAddToCart={handleAddToCart} />} />
+                <Route path='/cart' element={<Cart cart={cart} />} />
             </Routes>
         </Router>
     );

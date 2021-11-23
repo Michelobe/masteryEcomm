@@ -18,12 +18,12 @@ const Navbar = ({ totalItems }) => {
                     </Typography>
                     <div className={classes.grow} />
                     <div className={classes.button}>
-                        <Link to={`/cart`}>
-                        <IconButton aria-label='Show Cart Items' color='inherit'>
-                            <Badge badgeContent={totalItems} color='secondary'>
-                                <ShoppingCart />
-                            </Badge>
-                        </IconButton>
+                        <Link to='/cart'>
+                            <IconButton aria-label='Show Cart Items' color='inherit'>
+                                <Badge badgeContent={totalItems} color='secondary'>
+                                    <ShoppingCart />
+                                </Badge>
+                            </IconButton>
                         </Link>
                     </div>
                 </Toolbar>
