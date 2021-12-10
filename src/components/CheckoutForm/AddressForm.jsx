@@ -5,15 +5,16 @@ import FormInput from './CustomTextField.jsx';
 
 const AddressForm = () => {
     const methods = useForm();
+    const onSubmit = data => console.log(data);
 
     return (
         <div>
             <Typography variant='h6' gutterBottom>Shipping Address</Typography>
             <FormProvider {...methods}>
-                <form>
-                    <Grid container spacing={3}>
+                <form onSubmit={methods.handleSubmit(onSubmit)}>
+                    {/* <Grid container spacing={3}> */}
                         <FormInput required name='firstName' label='First Name' />
-                    </Grid>
+                    {/* </Grid> */}
                 </form>
             </FormProvider>
         </div>
