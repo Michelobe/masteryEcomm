@@ -49,7 +49,7 @@ const App = () => {
         fetchCart();
     }, []);
 
-    console.log(products);
+    // console.log(cart.id);
 
     return(
         <Router>
@@ -63,7 +63,7 @@ const App = () => {
                                                 handleEmptyCart={handleEmptyCart} 
                                             />} 
                 />
-                <Route path='/checkout' element={<Checkout />} />
+                <Route path='/checkout' element={<Checkout cart={cart} />} />
             </Routes>
         </Router>
     );
